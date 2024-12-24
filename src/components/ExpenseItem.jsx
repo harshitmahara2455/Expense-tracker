@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExpenseItem = ({ name, amount, date, category }) => {
+const ExpenseItem = ({ name, amount, date, category,onDelete }) => {
   // Use Intl.NumberFormat for currency formatting
   const formattedAmount = new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -17,6 +17,7 @@ const ExpenseItem = ({ name, amount, date, category }) => {
       <div className="expense-item__right">
         <p className="expense-item__amount">{formattedAmount}</p>
         <p className="expense-item__category">{category}</p>
+        <button onClick={onDelete}>Delete</button>
       </div>
     </li>
   );
